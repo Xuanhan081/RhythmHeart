@@ -72,21 +72,17 @@ h1{
     }
 /* ------------------------------section-radar------------------------------ */
 /* ------------------------------section-dashboard------------------------------ */
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 .card{
     border-radius: 5px;
-    position: relative;
     box-shadow: 0 2px 0 rgba(3,21,34,0.1);
     text-align: center;
     padding-top: 10px;
-}
-#index-bp{
-    border-top: 5px solid var(--green);
-}
-#index-bve{
-    border-top: 5px solid var(--blue);
-}
-#index-p{
-    border-top: 5px solid var(--orange);
 }
 .card-body{
     transition: all 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -114,12 +110,28 @@ h1{
     vertical-align: middle;
     letter-spacing: 1px;
 }
-.st1 {
+.st1{
   fill: none;
   stroke-width: 16;
   stroke-dasharray: 837; /* 可被 JS 覆蓋 */
   stroke-dashoffset: 837;
   transition: stroke-dashoffset 1s ease-out;
+  stroke-linecap: round;
+}
+#index-bp{
+    border-top: 5px solid var(--green);
+}
+#index-bve{
+    border-top: 5px solid var(--blue);
+}
+#index-p{
+    border-top: 5px solid var(--orange);
+}
+#index-bmb{
+    border-top: 5px solid var(--indigo);
+}
+#index-na{
+    border-top: 5px solid var(--yellow);
 }
 #index-bp .st1, .knob_data {
     fill: var(--green);
@@ -130,5 +142,11 @@ h1{
 }
 #index-p .st1, .knob_data {
     fill: var(--orange);
+}
+#index-bmb .st1, .knob_data {
+    fill: var(--indigo);
+}
+#index-na .st1, .knob_data {
+    fill: var(--yellow);
 }
 /* ------------------------------section-dashboard------------------------------ */

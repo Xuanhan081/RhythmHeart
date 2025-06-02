@@ -26,7 +26,7 @@ if (window.innerWidth < 576) {        // Bootstrap 的手機斷點
         labels: ["血壓指標", "神經活動指標", "身心平衡指標", "壓力指標", "血管彈性指標"],
         datasets: [{
         label: "綜合表現",
-        data: [40, 90, 50, 30, 40],
+        data: [0, 25, 50, 75, 100],
         backgroundColor: "rgba(54, 162, 235, 0.2)",
         borderColor: "rgba(54, 162, 235, 1)",
         pointBackgroundColor: "rgba(54, 162, 235, 1)"
@@ -67,19 +67,22 @@ if (window.innerWidth < 576) {        // Bootstrap 的手機斷點
     const values = radarData.datasets[0].data;
 
     cards.forEach((card, index) => {
-        const percent = values[index];
-        const knob = card.querySelector('.knob_data');
-        const path = card.querySelector('.st1');
+            const percent = values[index];
+            const knob = card.querySelector('.knob_data');
+            const path = card.querySelector('.st1');
 
-        // 更新顯示數字
-        knob.innerHTML = `${percent}<span class="txt_smaller">%</span>`;
+            // 更新顯示數字
+            knob.innerHTML = `${percent}<span class="txt_smaller">%</span>`;
 
-        // 畫 SVG 環形進度
-        if (path) {
-        const totalLength = path.getTotalLength();
-        path.style.strokeDasharray = totalLength;
-        path.style.strokeDashoffset = totalLength * (1 - percent / 100);
-        }
-    });
+            // 畫 SVG 環形進度
+            console.log('percent:', percent);
+            console.log('knob:', knob);
+            console.log('path:', path);
+            if (path) {
+            const totalLength = path.getTotalLength();
+            path.style.strokeDasharray = totalLength;
+            path.style.strokeDashoffset = totalLength * (1 - percent / 100);
+            }
+        });
     });
 
