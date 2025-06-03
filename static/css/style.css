@@ -1,14 +1,14 @@
 :root {
-  --blue:       #3283fd;
+  --blue:       #7fb0fa;
   --indigo:     #6610f2;
-  --purple:     #6f42c1;
+  --purple:     #cdbbeb;
   --pink:       #d63384;
-  --red:        #dc3545;
-  --orange:     #fd7e14;
-  --yellow:     #ffc107;
-  --green:      #198754;
+  --red:        #ff7979;
+  --orange:     #ffab79;
+  --yellow:     #ffeb79;
+  --green:      #99d8ba;
   --light-green:#dce9de;
-  --teal:       #20c997;
+  --teal:       #c7ebd5;
   --cyan:       #0dcaf0;
   --black:      #000000;
   --white:      #ffffff;
@@ -24,6 +24,12 @@ html,.body{
 }
 h1{
     display: block;
+}
+h4 span{
+    font-size: 12px;
+}
+h2 span{
+    font-size: 16px;
 }
 /* ------------------------------section-chart------------------------------ */
 .container{
@@ -46,6 +52,7 @@ h1{
     justify-content: space-between;
     align-items: center;
     border-radius: 15px;
+    height: 111px;
 }
 .rhy-icon{
     text-align: center;
@@ -92,8 +99,8 @@ h1{
 }
 .graph_media {
     max-height: 12rem;
-    stroke-width: 1.2;
-}
+    stroke-width: 1.8;
+} 
 .knob_data {
     position: absolute;
     text-align: center;
@@ -107,6 +114,9 @@ h1{
 }
 .progress-ring{
   fill: none;
+  stroke: var(--blue);
+  stroke-width: 1.8;
+  font-weight: bold;
   stroke-width: 16;
   stroke-dasharray: 837; /* 可被 JS 覆蓋 */
   stroke-dashoffset: 837;
@@ -114,34 +124,18 @@ h1{
   stroke-linecap: round;
 }
 #index-bp{
-    border-top: 5px solid var(--green);
+    border-top: 5px solid var(--red);
 }
 #index-bve{
-    border-top: 5px solid var(--blue);
-}
-#index-p{
     border-top: 5px solid var(--orange);
 }
-#index-bmb{
-    border-top: 5px solid var(--indigo);
-}
-#index-na{
+#index-p{
     border-top: 5px solid var(--yellow);
 }
-#index-bp .progress-ring,.knob_data {
-    stroke: var(--green);
-    font-weight: bold;
+#index-bmb{
+    border-top: 5px solid var(--teal);
 }
-#index-bve .sprogress-ring {
-    stroke: var(--blue);
-}
-#index-p .progress-ring{
-    stroke: var(--orange);
-}
-#index-bmb .sprogress-ring{
-    stroke: var(--purple);
-}
-#index-na .progress-ring{
-    stroke: var(--yellow);
+#index-na{
+    border-top: 5px solid var(--purple);
 }
 /* ------------------------------section-dashboard------------------------------ */
