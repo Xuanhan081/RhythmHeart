@@ -21,7 +21,7 @@
     <section id="chart">
         <div class="container container-lg">
             <div class="row g-2">
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6">
                     <div class="p-3 border rhy-dashboard">
                         <h4>心跳<br><span>Heart<br>Rate</span></h4>
                         <h2>00</h2>
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6">
                     <div class="p-3 border rhy-dashboard">
                         <h4>心率<br>變異<br><span>RMSSD</span></h4>
                         <h2>00</h2>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6">
                     <div class="p-3 border rhy-dashboard">
                         <h4>呼吸<br><span>Respiration<br>Rate</span></h4>
                         <h2>00</h2>
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6">
                     <div class="p-3 border rhy-dashboard">
                         <h4>前測<br>血壓<br><span>Pre-BP</span></h4>
                         <h2>00<br><span>/00</span></h2>
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6">
                     <div class="p-3 border rhy-dashboard">
                         <h4>後測<br>血壓<br><span>Post-BP</span></h4>
                         <h2>00<br><span>/00</span></h2>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6">
                     <div class="p-3 border rhy-dashboard">
                         <h4>壓力<br><span>Stress</span></h4>
                         <h2>Low</h2>
@@ -84,13 +84,13 @@
             </div>
         </div>
     </section>
-    <section id="radar">
         <div class="title">
             <hr>
             <h2>身心綜合表現</h2>
             <h5>Body and Mind Overall Performance</h5>
             <hr>
         </div>
+    <section id="radar">
         <div id="radar-container">
             <canvas id="radarChart"></canvas>
         </div>
@@ -98,7 +98,7 @@
     <section id="dashboard">
         <div class="container container-md">
             <div class="row g-4">
-                <div class="col-md-4 card panel-index" id="index-bp">
+                <div class="col-lg-4 col-md-6 card panel-index" id="index-bp">
                     <label for="" class="card-head">血壓指標<br>BP-Index</label>
                     <div class="card-body">
                         <div class="graph">
@@ -116,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 card panel-index" id="index-bve">
+                <div class="col-lg-4 col-md-6 card panel-index" id="index-bve">
                     <label for="" class="card-head">血管彈性<br>Vascular</label>
                     <div class="card-body">
                         <div class="graph">
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 card panel-index" id="index-p">
+                <div class="col-lg-4 col-md-6 card panel-index" id="index-p">
                     <label for="" class="card-head">壓力指標<br>Stress</label>
                     <div class="card-body">
                         <div class="graph">
@@ -152,7 +152,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 card panel-index" id="index-bmb">
+                <div class="col-lg-4 col-md-6 card panel-index" id="index-bmb">
                     <label for="" class="card-head">身心平衡指標<br>Balance</label>
                     <div class="card-body">
                         <div class="graph">
@@ -170,7 +170,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 card panel-index" id="index-na">
+                <div class="col-lg-4 col-md-6 card panel-index" id="index-na">
                     <label for="" class="card-head">神經活動指標<br>Neural</label>
                     <div class="card-body">
                         <div class="graph">
@@ -191,6 +191,12 @@
             </div>
         </div>
     </section>
+        <div class="title">
+            <hr>
+            <h2>神經活動指標</h2>
+            <h5>Neural Activity Index</h5>
+            <hr>
+        </div>
     <section id="nervetarget">
         <div class="target-container">
             <canvas class="canvas" id="targetChart" width="500" height="500"></canvas>

@@ -22,7 +22,7 @@
             ["血壓指標", "BP-Index"],
             ["神經活動", "Neural"],
             ["身心平衡", "Balance"],
-            ["壓力", "Stress"],
+            ["壓力指標", "Stress"],
             ["血管彈性", "Vascular"]
         ],
         datasets: [{
