@@ -25,6 +25,9 @@ html,.body{
 h1{
     font-size: 42px;
 }
+h1 span{
+    font-weight: 1000;
+}
 h4 span{
     display: inline-block;
     font-size: 12px;
