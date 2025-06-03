@@ -18,9 +18,15 @@
 //參考https://www.chartjs.org/docs/latest/axes/radial/
     window.addEventListener('DOMContentLoaded', () => {
     const radarData = {
-        labels: ["血壓<br>指標", "神經活動<br>指標", "身心平衡<br>指標", "壓力<br>指標", "血管彈性<br>指標"],
+        labels: [
+            ["血壓指標", "BP-Index"],
+            ["神經活動", "Neural"],
+            ["身心平衡", "Balance"],
+            ["壓力", "Stress"],
+            ["血管彈性", "Vascular"]
+        ],
         datasets: [{
-        label: "綜合表現",
+        label: "綜合表現 / Overall (Max 100)",
         data: [0, 25, 50, 75, 100],
         backgroundColor: "rgba(54, 162, 235, 0.2)",
         borderColor: "rgba(54, 162, 235, 1)",
@@ -32,9 +38,11 @@
 
     // 根據視窗寬度動態決定字體大小
     let labelFontSize = 25;
-    if (window.innerWidth < 576) {        // Bootstrap 的手機斷點
+    if (window.innerWidth < 385) {        // Bootstrap 的手機斷點
     labelFontSize = 10;
-    } else if (window.innerWidth < 768) { // 平板
+    } else if (window.innerWidth < 576) { // 平板
+    labelFontSize = 12;
+    }else if (window.innerWidth < 768) { // 平板
     labelFontSize = 18;
     }
     
@@ -112,10 +120,6 @@
                 backdropColor: "transparent"
             },
             pointLabels: {
-                callback: function(label) {
-                    // 把 <br> 轉成多行（Chart.js v3+ 支援 return array）
-                    return label.split("<br>");
-                },
                 font: {
                 size: labelFontSize
                 }
@@ -210,12 +214,15 @@
     // canvas 實際尺寸（根據響應式變化）
     let canvasSize = 600;
     let scale = 2; // 邏輯座標 100 -> 實際像素 200px
-    if (window.innerWidth < 576) {        // 手機
+    if (window.innerWidth < 385) {        // 手機
+        canvasSize = 300;
+        scale = 1;
+    } else if (window.innerWidth < 576) { // 平板
         canvasSize = 400;
-        scale = 5/3;
-    } else if (window.innerWidth < 768) { // 平板
-        canvasSize = 500;
         scale = 4/3;
+    }else if (window.innerWidth < 768) { // 平板
+        canvasSize = 500;
+        scale = 5/3;
     }
 
     const centerX = canvasSize / 2;

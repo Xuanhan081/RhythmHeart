@@ -23,31 +23,59 @@ html,.body{
     padding: 0;
 }
 h1{
-    display: block;
-    font-size: 52px;
-}
-h1{
     font-size: 42px;
 }
 h4 span{
+    display: inline-block;
     font-size: 12px;
+    line-height: 1.5;
 }
 h2 span{
     font-size: 16px;
-}
-/* ------------------------------section-chart------------------------------ */
-.container{
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 .container-fluid{
     padding: 10px;
     padding-right: 8%;
     padding-left: 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.logo img{
-    width: 10%;
+.logo{
+    width: 15%;
+    height: auto;
     min-width: 100px;
+}
+.text{
+    text-align: right;
+}
+@media (max-width:926px) {
+    h1{
+        font-size: 32px;
+    }
+}
+@media (max-width:726px) {
+    h1{
+        font-size: 28px;
+    }
+}
+@media (max-width:589px) {
+    h1{
+        font-size: 24px;
+    }
+    .container-fluid{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .text{
+        text-align: center;
+    }
+}
+/* ------------------------------section-chart------------------------------ */
+.container{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 /* .container-lg{
     background: #fcfbfb;
@@ -215,6 +243,13 @@ h2 span{
     .target-container{
         width: 400px;
         height: 400px;
+        position: relative;
+    }
+}
+@media (max-width:385px) {
+    .target-container{
+        width: 300px;
+        height: 300px;
         position: relative;
     }
 }
