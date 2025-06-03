@@ -32,9 +32,9 @@
     // 根據視窗寬度動態決定字體大小
     let labelFontSize = 25;
     if (window.innerWidth < 576) {        // Bootstrap 的手機斷點
-    labelFontSize = 14;
+    labelFontSize = 10;
     } else if (window.innerWidth < 768) { // 平板
-    labelFontSize = 16;
+    labelFontSize = 18;
     }
     //上背景色
     const radarBackgroundPlugin = {

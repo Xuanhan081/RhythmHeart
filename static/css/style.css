@@ -50,15 +50,23 @@ h2 span{
 .rhy-dashboard{
     display: flex;
     justify-content: space-between;
+    transition: transform 0.3s ease;
     align-items: center;
     border-radius: 15px;
     height: 111px;
+}
+.rhy-dashboard:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 2px 0 rgba(3,21,34,0.1);
 }
 .rhy-icon{
     text-align: center;
 }
 .rhy-icon img{
-    width: 30px;
+    width: 32px;
+}
+.rhy-icon p{
+    font-size: 11px;
 }
 .rhy-icon p,h2,h4{
     margin-bottom: 0;
@@ -114,7 +122,7 @@ h2 span{
 }
 .progress-ring{
   fill: none;
-  stroke: var(--blue);
+  stroke: var(--green);
   stroke-width: 1.8;
   font-weight: bold;
   stroke-width: 16;
@@ -133,7 +141,7 @@ h2 span{
     border-top: 5px solid var(--yellow);
 }
 #index-bmb{
-    border-top: 5px solid var(--teal);
+    border-top: 5px solid var(--blue);
 }
 #index-na{
     border-top: 5px solid var(--purple);
