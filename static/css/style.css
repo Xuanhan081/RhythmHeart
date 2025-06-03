@@ -71,6 +71,9 @@ h2 span{
     .text{
         text-align: center;
     }
+    .logo{
+        margin-bottom: 10px;
+    }
 }
 /* ------------------------------section-chart------------------------------ */
 .container{
