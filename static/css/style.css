@@ -72,12 +72,7 @@ h1{
     }
 /* ------------------------------section-radar------------------------------ */
 /* ------------------------------section-dashboard------------------------------ */
-ul{
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
+
 .card{
     border-radius: 5px;
     box-shadow: 0 2px 0 rgba(3,21,34,0.1);
@@ -110,7 +105,7 @@ ul{
     vertical-align: middle;
     letter-spacing: 1px;
 }
-.st1{
+.progress-ring{
   fill: none;
   stroke-width: 16;
   stroke-dasharray: 837; /* 可被 JS 覆蓋 */
@@ -133,20 +128,20 @@ ul{
 #index-na{
     border-top: 5px solid var(--yellow);
 }
-#index-bp .st1, .knob_data {
-    fill: var(--green);
+#index-bp .progress-ring,.knob_data {
+    stroke: var(--green);
     font-weight: bold;
 }
-#index-bve .st1, .knob_data {
-    fill: var(--blue);
+#index-bve .sprogress-ring {
+    stroke: var(--blue);
 }
-#index-p .st1, .knob_data {
-    fill: var(--orange);
+#index-p .progress-ring{
+    stroke: var(--orange);
 }
-#index-bmb .st1, .knob_data {
-    fill: var(--indigo);
+#index-bmb .sprogress-ring{
+    stroke: var(--purple);
 }
-#index-na .st1, .knob_data {
-    fill: var(--yellow);
+#index-na .progress-ring{
+    stroke: var(--yellow);
 }
 /* ------------------------------section-dashboard------------------------------ */

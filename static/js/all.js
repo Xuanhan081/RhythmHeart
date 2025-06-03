@@ -46,7 +46,7 @@ if (window.innerWidth < 576) {        // Bootstrap 的手機斷點
             min: 0,
             max: 100,
             ticks: {
-                stepSize: 10,
+                stepSize: 20,
                 backdropColor: "transparent"
             },
             pointLabels: {
@@ -69,19 +69,17 @@ if (window.innerWidth < 576) {        // Bootstrap 的手機斷點
     cards.forEach((card, index) => {
             const percent = values[index];
             const knob = card.querySelector('.knob_data');
-            const path = card.querySelector('.st1');
+            const circle = card.querySelector('.progress-ring');
 
             // 更新顯示數字
             knob.innerHTML = `${percent}<span class="txt_smaller">%</span>`;
 
             // 畫 SVG 環形進度
-            console.log('percent:', percent);
-            console.log('knob:', knob);
-            console.log('path:', path);
-            if (path) {
-            const totalLength = path.getTotalLength();
-            path.style.strokeDasharray = totalLength;
-            path.style.strokeDashoffset = totalLength * (1 - percent / 100);
+            console.log('circle:', circle);
+            if (circle) {
+            const totalLength = circle.getTotalLength();
+            circle.style.strokeDasharray = totalLength;
+            circle.style.strokeDashoffset = totalLength * (1 - percent / 100);
             }
         });
     });
