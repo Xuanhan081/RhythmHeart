@@ -13,8 +13,9 @@
     //     }]
     //     };
 
-
+//------------------------------------------------------------------------------------------------------身理健康指標雷達圖
 // 模擬後端提供的資料 (未來可透過 fetch 從 C# API 拿 JSON)
+//參考https://www.chartjs.org/docs/latest/axes/radial/
     window.addEventListener('DOMContentLoaded', () => {
     const radarData = {
         labels: ["血壓<br>指標", "神經活動<br>指標", "身心平衡<br>指標", "壓力<br>指標", "血管彈性<br>指標"],
@@ -36,7 +37,8 @@
     } else if (window.innerWidth < 768) { // 平板
     labelFontSize = 18;
     }
-    //上背景色
+    
+    //上雷達圖背景色-->plugins
     const radarBackgroundPlugin = {
     id: 'radarBackgroundPlugin',
     beforeDraw(chart) {
@@ -93,11 +95,9 @@
     }
     };
 
-
-
     console.log('radarBackgroundPlugin:', radarBackgroundPlugin);
 
-    //設定雷達間距
+    //設定雷達間距-->參考https://www.chartjs.org/docs/latest/axes/radial/
     const config = {
         type: 'radar',
         data: radarData,
@@ -129,7 +129,7 @@
     const ctx = document.getElementById('radarChart');
     new Chart(ctx, config);
 
-    // ⬇️ 3. 更新每個卡片的數值與 SVG 繪製
+    // ------------------------------------------------------------------------------------------------------更新每個卡片的數值與 SVG 繪製
     const cards = document.querySelectorAll('.panel-index');
     const values = radarData.datasets[0].data;
 
@@ -150,3 +150,91 @@
         });
     });
 
+    //------------------------------------------------------------------------------------------------------神經指標
+    const canvas = document.getElementById("targetChart");
+    const ctx = canvas.getContext("2d");
+
+    // 圓心座標
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const radii = [50, 100, 200];  // 三層圓半徑
+    const colors = ['#febbad', '#fedcad', '#c7ebd5']; // 中 → 外
+
+    // 畫同心圓
+    for (let i = radii.length - 1; i >= 0; i--) {
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radii[i], 0, Math.PI * 2);
+    ctx.fillStyle = colors[i];
+    ctx.fill();
+    //ctx.stroke(); 同心圓框線
+    }
+
+    // 畫 X 軸
+    ctx.beginPath();
+    ctx.moveTo(0, centerY);
+    ctx.lineTo(canvas.width, centerY);
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    // 加上文字：左「平和」、右「活力」
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "black";
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    ctx.fillText("平和", 5, centerY - 20); // 左邊偏內一點
+
+    ctx.textAlign = "right";
+    ctx.fillText("活力", canvas.width - 5, centerY - 20); // 右邊偏內一點
+
+    // 畫 Y 軸
+    ctx.beginPath();
+    ctx.moveTo(centerX, 0);
+    ctx.lineTo(centerX, canvas.height);
+    ctx.stroke();
+
+    // 加上文字：上「穩定」、下「波動」
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "black";
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    ctx.fillText("波動", centerY + 5, centerY + canvas.width/2 - 20); // 上邊偏右一點
+
+    ctx.textAlign = "left";
+    ctx.fillText("穩定", centerY + 5, 0 + 5); // 下邊偏右一點
+
+    //------------------------------------------------------------------------------------------------------星星座標函式
+    
+    function placeStar(x, y) {
+    const container = document.querySelector('.target-container');
+
+    // canvas 實際尺寸（根據響應式變化）
+    let canvasSize = 600;
+    let scale = 2; // 邏輯座標 100 -> 實際像素 200px
+    if (window.innerWidth < 576) {        // 手機
+        canvasSize = 400;
+        scale = 5/3;
+    } else if (window.innerWidth < 768) { // 平板
+        canvasSize = 500;
+        scale = 4/3;
+    }
+
+    const centerX = canvasSize / 2;
+    const centerY = canvasSize / 2;
+
+
+    // 將邏輯座標轉換為畫面 pixel 座標
+    const pixelX = centerX + x * scale ;
+    const pixelY = centerY - y * scale -17; // Y 軸反轉
+
+    // 建立星星元素
+    const star = document.createElement('label');
+    star.className = 'star';
+    star.innerHTML = '<i class="bi bi-star-fill"></i>';
+    star.style.left = `${pixelX}px`;
+    star.style.top = `${pixelY}px`;
+
+    container.appendChild(star);
+    }
+
+
+    placeStar(25, 100);   

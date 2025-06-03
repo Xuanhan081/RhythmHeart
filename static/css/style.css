@@ -24,6 +24,10 @@ html,.body{
 }
 h1{
     display: block;
+    font-size: 52px;
+}
+h1{
+    font-size: 42px;
 }
 h4 span{
     font-size: 12px;
@@ -37,8 +41,9 @@ h2 span{
     margin-bottom: 20px;
 }
 .container-fluid{
-    background: var(--light-green);
     padding: 10px;
+    padding-right: 8%;
+    padding-left: 8%;
 }
 .logo img{
     width: 10%;
@@ -73,6 +78,11 @@ h2 span{
 }
 /* ------------------------------section-chart------------------------------ */
 /* ------------------------------section-radar------------------------------ */
+.title{
+    text-align: center;
+    margin-right: 8%;
+    margin-left: 8%;
+}
 #radar-container {
       max-width: 700px;
       min-width: 100px;
@@ -147,3 +157,65 @@ h2 span{
     border-top: 5px solid var(--purple);
 }
 /* ------------------------------section-dashboard------------------------------ */
+/* ------------------------------section-nervetarget------------------------------ */
+#nervetarget{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+    margin-top: 40px;
+}
+.target-container{
+    width: 600px;
+    height: 600px;
+    position: relative;
+    padding: 0;
+    }
+.canvas{
+    width: 100%;
+    position: relative;
+}
+.star{
+    z-index: 999;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(-50%, 0%);
+    font-size: 20px;
+    }
+.feature{
+    font-size: 18px;
+    color: #3d8361;
+    z-index: 999;
+    position: absolute;
+}
+#lbl_active{
+    top: 25%;
+    right: 28%;
+}
+#lbl_calm{
+    top: 25%;
+    left: 28%;
+}
+#lbl_passive{
+    bottom: 25%;
+    left: 28%;
+}
+#lbl_anxiety{
+    bottom: 25%;
+    right: 28%;
+}
+@media (max-width:768px) {
+    .target-container{
+        width: 500px;
+        height: 500px;
+        position: relative;
+    }
+}
+@media (max-width:576px) {
+    .target-container{
+        width: 400px;
+        height: 400px;
+        position: relative;
+    }
+}
+/* ------------------------------section-nervetarget------------------------------ */

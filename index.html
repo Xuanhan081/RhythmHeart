@@ -12,7 +12,9 @@
 <body>
     <nav>
         <div class="container-fluid">
-            <h1 class="logo"><a href="#"><img src="image/Ritum logo.png" alt="ritum"></a></h1>
+            <h1>RhythmHeart</h1>
+            <hr>
+            <h5>身理數值量測平台健康報告</h5>
         </div>
     </nav>
     <section id="chart">
@@ -82,6 +84,12 @@
         </div>
     </section>
     <section id="radar">
+        <div class="title">
+            <hr>
+            <h2>身心綜合表現</h2>
+            <h5>Body and Mind Overall Performance</h5>
+            <hr>
+        </div>
         <div id="radar-container">
             <canvas id="radarChart"></canvas>
         </div>
@@ -180,6 +188,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section id="nervetarget">
+        <div class="target-container">
+            <canvas class="canvas" id="targetChart" width="500" height="500"></canvas>
+            <!-- <label for="targetChart" class = "star" ><i class="bi bi-star-fill" visable="false"></i></label> -->
+            <label for="targetChart" class="feature" id="lbl_active"><p>積極</p></label>
+            <label for="targetChart" class="feature" id="lbl_calm">冷靜</label>
+            <label for="targetChart" class="feature" id="lbl_passive">消極</label>
+            <label for="targetChart" class="feature" id="lbl_anxiety">躁進</label>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
