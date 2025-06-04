@@ -150,6 +150,11 @@
             const totalLength = circle.getTotalLength();
             circle.style.strokeDasharray = totalLength;
             circle.style.strokeDashoffset = totalLength * (1 - percent / 100);
+
+            // ✅ 讓圓從「下方」開始畫
+            const cx = circle.getAttribute("cx");
+            const cy = circle.getAttribute("cy");
+            circle.setAttribute("transform", `rotate(90 ${cx} ${cy})`);
             }
         });
     });
