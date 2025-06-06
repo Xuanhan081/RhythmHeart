@@ -14,35 +14,42 @@
     //     };
 
 //------------------------------------------------------------------------------------------------------身理健康指標雷達圖
-// 模擬後端提供的資料 (未來可透過 fetch 從 C# API 拿 JSON)
 //參考https://www.chartjs.org/docs/latest/axes/radial/
     window.addEventListener('DOMContentLoaded', () => {
     const radarData = {
         labels: [
             ["血壓指標", "BP-Index"],
-            ["神經活動", "Neural"],
-            ["身心平衡", "Balance"],
-            ["壓力指標", "Stress"],
-            ["血管彈性", "Vascular"]
+            ["神經活動", "Neural-Index"],
+            ["身心平衡", "Balance-Index"],
+            ["壓力指標", "Stress-Index"],
+            ["血管彈性", "Vascular-Index"]
         ],
         datasets: [{
         label: "綜合表現 / Overall (Max 100)",
-        data: [0, 25, 50, 75, 100],
+        data: [
+            window.radarValues.bp,
+            window.radarValues.nerve,
+            window.radarValues.balance,
+            window.radarValues.stress,
+            window.radarValues.vas
+        ],
         backgroundColor: "rgba(54, 162, 235, 0.2)",
         borderColor: "rgba(54, 162, 235, 1)",
         pointBackgroundColor: "rgba(54, 162, 235, 1)"
         }]
     };
-
+    
     // ⬇️ 1. 產生 Chart.js 雷達圖
 
     // 根據視窗寬度動態決定字體大小
-    let labelFontSize = 25;
+    let labelFontSize = 22;
     if (window.innerWidth < 385) {        // Bootstrap 的手機斷點
     labelFontSize = 10;
     } else if (window.innerWidth < 576) { // 平板
     labelFontSize = 12;
     }else if (window.innerWidth < 768) { // 平板
+    labelFontSize = 15;
+    }else if (window.innerWidth < 926) { // 中螢幕
     labelFontSize = 18;
     }
     
@@ -143,7 +150,7 @@
             const circle = card.querySelector('.progress-ring');
 
             // 更新顯示數字
-            knob.innerHTML = `${percent}<span class="txt_smaller">%</span>`;
+            //knob.innerHTML = `${percent}<span class="txt_smaller">%</span>`;
 
             // 畫 SVG 環形進度
             if (circle) {
@@ -158,6 +165,7 @@
             }
         });
     });
+
 
     //------------------------------------------------------------------------------------------------------神經指標
     const canvas = document.getElementById("targetChart");
@@ -186,14 +194,14 @@
     ctx.stroke();
 
     // 加上文字：左「平和」、右「活力」
-    ctx.font = "16px Arial";
-    ctx.fillStyle = "black";
-    ctx.textAlign = "left";
-    ctx.textBaseline = "top";
-    ctx.fillText("平和", 5, centerY - 20); // 左邊偏內一點
+    // ctx.font = "16px Arial";
+    // ctx.fillStyle = "black";
+    // ctx.textAlign = "left";
+    // ctx.textBaseline = "top";
+    // ctx.fillText("平和", 5, centerY - 20); // 左邊偏內一點
 
-    ctx.textAlign = "right";
-    ctx.fillText("活力", canvas.width - 5, centerY - 20); // 右邊偏內一點
+    // ctx.textAlign = "right";
+    // ctx.fillText("活力", canvas.width - 5, centerY - 20); // 右邊偏內一點
 
     // 畫 Y 軸
     ctx.beginPath();
@@ -201,15 +209,15 @@
     ctx.lineTo(centerX, canvas.height);
     ctx.stroke();
 
-    // 加上文字：上「穩定」、下「波動」
-    ctx.font = "16px Arial";
-    ctx.fillStyle = "black";
-    ctx.textAlign = "left";
-    ctx.textBaseline = "top";
-    ctx.fillText("波動", centerY + 5, centerY + canvas.width/2 - 20); // 上邊偏右一點
+    // // 加上文字：上「穩定」、下「波動」
+    // ctx.font = "16px Arial";
+    // ctx.fillStyle = "black";
+    // ctx.textAlign = "left";
+    // ctx.textBaseline = "top";
+    // ctx.fillText("波動", centerY + 5, centerY + canvas.width/2 - 20); // 上邊偏右一點
 
-    ctx.textAlign = "left";
-    ctx.fillText("穩定", centerY + 5, 0 + 5); // 下邊偏右一點
+    // ctx.textAlign = "left";
+    // ctx.fillText("穩定", centerY + 5, 0 + 5); // 下邊偏右一點
 
     //------------------------------------------------------------------------------------------------------星星座標函式
     
@@ -222,10 +230,12 @@
     if (window.innerWidth < 385) {        // 手機
         canvasSize = 300;
         scale = 1;
-    } else if (window.innerWidth < 576) { // 平板
+    } 
+    else if (window.innerWidth < 576) { // 平板
         canvasSize = 400;
         scale = 4/3;
-    }else if (window.innerWidth < 768) { // 平板
+    }
+    else if (window.innerWidth < 768) { // 平板
         canvasSize = 500;
         scale = 5/3;
     }
@@ -233,20 +243,35 @@
     const centerX = canvasSize / 2;
     const centerY = canvasSize / 2;
 
-
     // 將邏輯座標轉換為畫面 pixel 座標
-    const pixelX = centerX + x * scale ;
-    const pixelY = centerY - y * scale -17; // Y 軸反轉
+    const pixelX = centerX + x * scale + 14.5;
+    const pixelY = centerY - y * scale - 8; // Y 軸反轉
 
-    // 建立星星元素
+    // 建立星星元素⭐
+    const starSize = 28; // 根據實際圖示大小調整
     const star = document.createElement('label');
     star.className = 'star';
     star.innerHTML = '<i class="bi bi-star-fill"></i>';
-    star.style.left = `${pixelX}px`;
-    star.style.top = `${pixelY}px`;
+    star.style.left = `${pixelX - starSize / 2}px`;
+    star.style.top = `${pixelY - starSize / 2}px`;
 
     container.appendChild(star);
+
+    // 📏 建立線條
+    const line = document.createElement('div');
+    line.className = 'center-line';
+
+    // 計算線長與角度
+    const dx = pixelX- starSize / 2 - centerX;
+    const dy = pixelY- centerY + 8;
+    const length = Math.sqrt(dx * dx + dy * dy);
+    const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+    // 設定線的樣式與位置
+    line.style.width = `${length}px`;
+    line.style.transform = `rotate(${angle}deg)`;
+    line.style.left = `${centerX}px`;
+    line.style.top = `${centerY}px`;
+
+    container.appendChild(line);
     }
-
-
-    placeStar(25, 100);   
