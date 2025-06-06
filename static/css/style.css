@@ -24,10 +24,6 @@ html,.body{
 }
 h1{
     font-size: 42px;
-    font-weight: 900;
-}
-h1 span{
-    font-weight: 1200;
 }
 h4 span{
     display: inline-block;
@@ -46,14 +42,14 @@ h2 span{
     align-items: center;
 }
 .logo{
-    width: 15%;
+    width: 18%;
     height: auto;
     min-width: 100px;
 }
-.text{
-    text-align: right;
+.text-logo{
+    width: 45%;
 }
-@media (max-width:926px) {
+/* @media (max-width:926px) {
     h1{
         font-size: 32px;
     }
@@ -62,7 +58,7 @@ h2 span{
     h1{
         font-size: 28px;
     }
-}
+} */
 @media (max-width:589px) {
     h1{
         font-size: 24px;
@@ -72,8 +68,8 @@ h2 span{
         justify-content: center;
         align-items: center;
     }
-    .text{
-        text-align: center;
+    .text-logo {
+        width: 300px;
     }
     .logo{
         margin-bottom: 10px;
@@ -84,12 +80,10 @@ h2 span{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-/* .container-lg{
-    background: #fcfbfb;
-} */
 .rhy-dashboard{
     display: flex;
     justify-content: space-between;
+    background: #ffffff;
     transition: transform 0.3s ease;
     align-items: center;
     border-radius: 15px;
@@ -117,10 +111,11 @@ h2 span{
     text-align: center;
     margin-right: 8%;
     margin-left: 8%;
+    margin-bottom: 20px;
 }
 #radar-container {
-      max-width: 700px;
-      min-width: 100px;
+      max-width: 900px;
+      min-width: 200px;
       width: 80%;
       margin: auto;
       display: flex;
@@ -138,9 +133,31 @@ h2 span{
     box-shadow: 0 2px 0 rgba(3,21,34,0.1);
     text-align: center;
     padding-top: 10px;
+    transition: transform 0.3s ease;
+}
+.card:hover{
+    transform: translateY(-3px);
 }
 .card-body{
     transition: all 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.card-label{
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 15px;
+}
+.label-excel{
+    background: #c7ebd5;
+}
+.label-good{
+    background: #fedcad;
+}
+.label-normal{
+    background: #febbad;
 }
 .graph {
     width: 80%;
@@ -152,7 +169,7 @@ h2 span{
 }
 .graph_media {
     max-height: 12rem;
-    stroke-width: 1.8;
+    stroke-width: 1.8px;
 } 
 .knob_data {
     position: absolute;
@@ -166,15 +183,8 @@ h2 span{
     letter-spacing: 1px;
 }
 .progress-ring{
-  fill: none;
-  stroke: var(--green);
-  stroke-width: 1.8;
-  font-weight: bold;
-  stroke-width: 16;
-  stroke-dasharray: 837; /* 可被 JS 覆蓋 */
-  stroke-dashoffset: 837;
+  /* stroke: var(--green); */
   transition: stroke-dashoffset 1s ease-out;
-  stroke-linecap: round;
 }
 #index-bp{
     border-top: 5px solid var(--red);
@@ -215,7 +225,8 @@ h2 span{
     top: 0%;
     left: 0%;
     transform: translate(-50%, 0%);
-    font-size: 20px;
+    font-size: 28px;
+    color: darkred;
     }
 .feature{
     font-size: 18px;
@@ -225,25 +236,69 @@ h2 span{
 }
 #lbl_active{
     top: 25%;
-    right: 28%;
+    right: 25%;
+    text-align: right;      /* ✅ 文字靠右對齊 */
 }
 #lbl_calm{
     top: 25%;
-    left: 28%;
+    left: 24%;
 }
 #lbl_passive{
     bottom: 25%;
-    left: 28%;
+    left: 24%;
 }
 #lbl_anxiety{
     bottom: 25%;
-    right: 28%;
+    right: 25%;
+    text-align: right;  
+}
+.axis{
+    font-size: 22px;
+    font-weight: 600;
+    z-index: 999;
+    position: absolute;
+}
+#y_Stable{
+    top: 0%;
+    left: 50%;
+    transform: translate(-42%, 0%);
+}
+#x_Peace{
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+}
+#y_Unstable{
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-36%, 50%);
+}
+#x_Energy{
+    top: 50%;
+    right: 0%;
+    text-align: right;  
+    transform: translate(0%, -50%);
+}
+.center-line {
+    position: absolute;
+    height: 2px;
+    background: green;
+    transform-origin: 0 0; /* 從左上角旋轉 */
 }
 @media (max-width:768px) {
     .target-container{
         width: 500px;
         height: 500px;
         position: relative;
+    }
+    .axis{
+        font-size: 20px;
+    }
+    .feature{
+        font-size: 16px;
+    }
+    .star{
+        font-size: 26px;
     }
 }
 @media (max-width:576px) {
@@ -252,12 +307,30 @@ h2 span{
         height: 400px;
         position: relative;
     }
+    .axis{
+        font-size: 18px;
+    }
+    .feature{
+        font-size: 14px;
+    }
+    .star{
+        font-size: 24px;
+    }
 }
 @media (max-width:385px) {
     .target-container{
         width: 300px;
         height: 300px;
         position: relative;
+    }
+    .axis{
+        font-size: 16px;
+    }
+    .feature{
+        font-size: 12px;
+    }
+    .star{
+        font-size: 22px;
     }
 }
 /* ------------------------------section-nervetarget------------------------------ */
