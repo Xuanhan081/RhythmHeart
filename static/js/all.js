@@ -18,11 +18,11 @@
     window.addEventListener('DOMContentLoaded', () => {
     const radarData = {
         labels: [
-            ["血壓指標", "BP-Index"],
-            ["神經活動", "Neural-Index"],
-            ["身心平衡", "Balance-Index"],
-            ["壓力指標", "Stress-Index"],
-            ["血管彈性", "Vascular-Index"]
+            ["血壓指標", "BP","-Index"],
+            ["神經活動", "Neural","-Index"],
+            ["身心平衡", "Balance","-Index"],
+            ["壓力指標", "Stress","-Index"],
+            ["血管彈性", "Vascular","-Index"]
         ],
         datasets: [{
         label: "綜合表現 / Overall (Max 100)",
