@@ -119,6 +119,11 @@ h2 span{
 .rhy-icon p,h2,h4{
     margin-bottom: 0;
 }
+@media (max-width:589px){
+    .rhy-icon img{
+        width: 30px;
+    }
+}
 /* ------------------------------section-chart------------------------------ */
 /* ------------------------------section-radar------------------------------ */
 .title{
@@ -143,11 +148,13 @@ h2 span{
 /* ------------------------------section-dashboard------------------------------ */
 
 .card{
-    border-radius: 5px;
     box-shadow: 0 2px 0 rgba(3,21,34,0.1);
     text-align: center;
     padding-top: 10px;
     transition: transform 0.3s ease;
+}
+.carsList{
+    gap: 8px;
 }
 .card:hover{
     transform: translateY(-3px);
@@ -163,6 +170,7 @@ h2 span{
     left: 50%;
     transform: translate(-50%, 0%);
     border-radius: 15px;
+    font-size: 20px;
 }
 .label-excel{
     background: #c7ebd5;
@@ -199,21 +207,6 @@ h2 span{
 .progress-ring{
   /* stroke: var(--green); */
   transition: stroke-dashoffset 1s ease-out;
-}
-#index-bp{
-    border-top: 5px solid var(--red);
-}
-#index-bve{
-    border-top: 5px solid var(--orange);
-}
-#index-p{
-    border-top: 5px solid var(--yellow);
-}
-#index-bmb{
-    border-top: 5px solid var(--blue);
-}
-#index-na{
-    border-top: 5px solid var(--purple);
 }
 /* ------------------------------section-dashboard------------------------------ */
 /* ------------------------------section-nervetarget------------------------------ */

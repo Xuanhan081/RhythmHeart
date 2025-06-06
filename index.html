@@ -94,7 +94,7 @@
     <section id="dashboard">
         <div class="container container-md">
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 card panel-index" id="index-bp">
+                <div class="col-lg-4 col-md-6 card panel-index rounded-4" id="index-bp">
                     <label for="" class="card-head">血壓指標<br>BP-Index</label>
                     <div class="card-body">
                         <div class="graph">
@@ -102,10 +102,19 @@
                                 <span class="txt_smaller">%</span>
                             </div>
                             <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
+                                <!-- 漸層定義 -->
+                                <defs>
+                                    <linearGradient id="grad-stroke-1"
+                                                    x1="100%" y1="0%" x2="0%" y2="0%"
+                                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#fccec5" />
+                                    <stop offset="20%" stop-color="#fc2d02" />
+                                    </linearGradient>
+                                </defs>
                             <!-- 背景圓 -->
-                            <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" />
+                            <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99"   stroke-dashoffset="376.99"/>
                             <!-- 進度圓 -->
-                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="#febbad" stroke-width="20" 
+                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-1)"  stroke-width="20" 
                                     fill="none" stroke-linecap="round"
                                     stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                             </svg>
@@ -114,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 card panel-index" id="index-bve">
+                <div class="col-lg-4 col-md-6 card panel-index rounded-4" id="index-bve">
                     <label for="" class="card-head">神經活動<br>Neural-Index</label>
                     <div class="card-body">
                         <div class="graph">
@@ -122,10 +131,19 @@
                                 <span class="txt_smaller">%</span>
                             </div>
                             <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
+                                <!-- 漸層定義 -->
+                                <defs>
+                                    <linearGradient id="grad-stroke-2"
+                                                    x1="100%" y1="0%" x2="0%" y2="0%"
+                                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#fce4c3" />
+                                    <stop offset="40%" stop-color="#fcb553" />
+                                    </linearGradient>
+                                </defs>
                             <!-- 背景圓 -->
-                            <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" />
+                            <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99"   stroke-dashoffset="376.99"/>
                             <!-- 進度圓 -->
-                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="#fedcad" stroke-width="20" 
+                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-2)" stroke-width="20" 
                                     fill="none" stroke-linecap="round"
                                     stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                             </svg>
@@ -134,7 +152,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 card panel-index" id="index-p">
+                <div class="col-lg-4 col-md-6 card panel-index rounded-4" id="index-p">
                     <label for="" class="card-head">身心平衡<br>Balance-Index</label>
                     <div class="card-body">
                         <div class="graph">
@@ -142,10 +160,20 @@
                                 <span class="txt_smaller">%</span>
                             </div>
                             <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
+                                <!-- 漸層定義 -->
+                                <defs>
+                                    <linearGradient id="grad-stroke-3"
+                                                    x1="100%" y1="0%" x2="0%" y2="0%"
+                                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#def6e7" />
+                                    <stop offset="50%" stop-color="#75d59a" />
+                                    <stop offset="100%" stop-color="#28a157" />
+                                    </linearGradient>
+                                </defs>
                             <!-- 背景圓 -->
-                            <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" />
+                            <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99"   stroke-dashoffset="376.99"/>
                             <!-- 進度圓 -->
-                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="#c7ebd5" stroke-width="20" 
+                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-3)" stroke-width="20" 
                                     fill="none" stroke-linecap="round"
                                     stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                             </svg>
@@ -154,7 +182,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 card panel-index" id="index-bmb">
+                <div class="col-lg-4 col-md-6 card panel-index rounded-4" id="index-bmb">
                     <label for="" class="card-head">壓力指標<br>Stress-Index</label>
                     <div class="card-body">
                         <div class="graph">
@@ -163,9 +191,9 @@
                             </div>
                             <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
                             <!-- 背景圓 -->
-                            <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" />
+                            <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99"   stroke-dashoffset="376.99"/>
                             <!-- 進度圓 -->
-                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="#c7ebd5" stroke-width="20" 
+                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-3)" stroke-width="20" 
                                     fill="none" stroke-linecap="round"
                                     stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                             </svg>
@@ -174,7 +202,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 card panel-index" id="index-na">
+                <div class="col-lg-4 col-md-6 card panel-index rounded-4" id="index-na">
                     <label for="" class="card-head">血管彈性<br>Vascular-Index</label>
                     <div class="card-body">
                         <div class="graph">
@@ -183,9 +211,9 @@
                             </div>
                             <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
                             <!-- 背景圓 -->
-                            <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" />
+                            <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99"   stroke-dashoffset="376.99"/>
                             <!-- 進度圓 -->
-                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="#c7ebd5" stroke-width="20" 
+                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-3)" stroke-width="20" 
                                     fill="none" stroke-linecap="round"
                                     stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                             </svg>
