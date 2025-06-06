@@ -27,11 +27,11 @@
         datasets: [{
         label: "綜合表現 / Overall (Max 100)",
         data: [
-            window.radarValues.bp,
-            window.radarValues.nerve,
-            window.radarValues.balance,
-            window.radarValues.stress,
-            window.radarValues.vas
+            20,
+            35,
+            50,
+            65,
+            80
         ],
         backgroundColor: "rgba(54, 162, 235, 0.2)",
         borderColor: "rgba(54, 162, 235, 1)",
@@ -275,3 +275,5 @@
 
     container.appendChild(line);
     }
+
+    placeStar(25,100);

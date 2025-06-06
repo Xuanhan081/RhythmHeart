@@ -60,8 +60,11 @@ h2 span{
     }
 } */
 @media (max-width:589px) {
-    h1{
+    h2{
         font-size: 24px;
+    }
+    h4{
+        font-size: 18px;
     }
     .container-fluid{
         flex-direction: column;

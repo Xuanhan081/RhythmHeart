@@ -11,17 +11,15 @@
 </head>
 <body>
     <nav>
-        <div class="container-fluid">
-            <img src="image/ttmd_LOGO.jpg" alt="ttmd_LOGO" class="logo">
-            <div class="text">
-            <h1>身心靈平衡的律心健康體驗<br><span>Rhythm</span>Heart</h1>
-            </div>
+        <div class="container-fluid bg-white">
+            <img src="/image/ttmd_LOGO.jpg" alt="ttmd_LOGO" class="logo">
+            <img src="/image/rhythmheart-logo-text-CN.png" alt="rhythmheart" class="text-logo">
         </div>
     </nav>
     <section id="chart">
         <div class="container container-lg">
             <div class="row g-2">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6">
                     <div class="p-3 border rhy-dashboard">
                         <h4>心跳<br><span>Heart<br>Rate</span></h4>
                         <h2>00</h2>
@@ -31,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6">
                     <div class="p-3 border rhy-dashboard">
                         <h4>心率<br>變異<br><span>RMSSD</span></h4>
                         <h2>00</h2>
@@ -41,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6">
                     <div class="p-3 border rhy-dashboard">
                         <h4>呼吸<br><span>Respiration<br>Rate</span></h4>
                         <h2>00</h2>
@@ -51,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6">
                     <div class="p-3 border rhy-dashboard">
                         <h4>前測<br>血壓<br><span>Pre-BP</span></h4>
                         <h2>00<br><span>/00</span></h2>
@@ -61,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6">
                     <div class="p-3 border rhy-dashboard">
                         <h4>後測<br>血壓<br><span>Post-BP</span></h4>
                         <h2>00<br><span>/00</span></h2>
@@ -71,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6">
                     <div class="p-3 border rhy-dashboard">
                         <h4>壓力<br><span>Stress</span></h4>
                         <h2>Low</h2>
@@ -87,7 +85,6 @@
             <hr>
             <h2>身心綜合表現</h2>
             <h5>Body and Mind Overall Performance</h5>
-            <hr>
         </div>
     <section id="radar">
         <div id="radar-container">
@@ -101,17 +98,19 @@
                     <label for="" class="card-head">血壓指標<br>BP-Index</label>
                     <div class="card-body">
                         <div class="graph">
-                            <div class="knob_data">Number
+                            <div class="knob_data">20
                                 <span class="txt_smaller">%</span>
                             </div>
                             <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
                             <!-- 背景圓 -->
                             <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" />
                             <!-- 進度圓 -->
-                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="var(--blue)" stroke-width="20"
+                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="#febbad" stroke-width="20" 
                                     fill="none" stroke-linecap="round"
                                     stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                             </svg>
+                            <label for="" class="card-label" style="background: #febbad;">Poor</label>
+                            <!-- <asp:Label id="Label_BP" runat="server" CssClass="card-label"/> -->
                         </div>
                     </div>
                 </div>
@@ -119,17 +118,19 @@
                     <label for="" class="card-head">神經活動指標<br>Neural</label>
                     <div class="card-body">
                         <div class="graph">
-                            <div class="knob_data">Number
+                            <div class="knob_data">35
                                 <span class="txt_smaller">%</span>
                             </div>
                             <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
                             <!-- 背景圓 -->
                             <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" />
                             <!-- 進度圓 -->
-                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="var(--blue)" stroke-width="20"
+                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="#fedcad" stroke-width="20" 
                                     fill="none" stroke-linecap="round"
                                     stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                             </svg>
+                            <label for="" class="card-label" style="background: #fedcad;">Good</label>
+                            <!-- <asp:Label id="Label_Nerve" runat="server" CssClass="card-label"/> -->
                         </div>
                     </div>
                 </div>
@@ -137,17 +138,19 @@
                     <label for="" class="card-head">身心平衡指標<br>Balance</label>
                     <div class="card-body">
                         <div class="graph">
-                            <div class="knob_data">Number
+                            <div class="knob_data">50
                                 <span class="txt_smaller">%</span>
                             </div>
                             <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
                             <!-- 背景圓 -->
                             <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" />
                             <!-- 進度圓 -->
-                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="var(--blue)" stroke-width="20"
+                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="#c7ebd5" stroke-width="20" 
                                     fill="none" stroke-linecap="round"
                                     stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                             </svg>
+                            <label for="" class="card-label" style="background: #c7ebd5;">Excellent</label>
+                            <!-- <asp:Label id="Label_Balance" runat="server" CssClass="card-label"/> -->
                         </div>
                     </div>
                 </div>
@@ -155,17 +158,19 @@
                     <label for="" class="card-head">壓力指標<br>Stress</label>
                     <div class="card-body">
                         <div class="graph">
-                            <div class="knob_data">Number
+                            <div class="knob_data">65
                                 <span class="txt_smaller">%</span>
                             </div>
                             <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
                             <!-- 背景圓 -->
                             <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" />
                             <!-- 進度圓 -->
-                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="var(--blue)" stroke-width="20"
+                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="#c7ebd5" stroke-width="20" 
                                     fill="none" stroke-linecap="round"
                                     stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                             </svg>
+                            <label for="" class="card-label" style="background: #c7ebd5;">Excellent</label>
+                            <!-- <asp:Label id="Label_Stress" runat="server" CssClass="card-label"/> -->
                         </div>
                     </div>
                 </div>
@@ -173,17 +178,19 @@
                     <label for="" class="card-head">血管彈性指標<br>Vascular</label>
                     <div class="card-body">
                         <div class="graph">
-                            <div class="knob_data">Number
+                            <div class="knob_data">80
                                 <span class="txt_smaller">%</span>
                             </div>
                             <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
                             <!-- 背景圓 -->
                             <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" />
                             <!-- 進度圓 -->
-                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="var(--blue)" stroke-width="20"
+                            <circle class="progress-ring" cx="133" cy="133" r="120" stroke="#c7ebd5" stroke-width="20" 
                                     fill="none" stroke-linecap="round"
                                     stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                             </svg>
+                            <label for="" class="card-label" style="background: #c7ebd5;">Excellent</label>
+                            <!-- <asp:Label id="Label_Vas" runat="server" CssClass="card-label"/> -->
                         </div>
                     </div>
                 </div>
@@ -194,16 +201,19 @@
             <hr>
             <h2>神經活動指標</h2>
             <h5>Neural Activity Index</h5>
-            <hr>
         </div>
     <section id="nervetarget">
         <div class="target-container">
             <canvas class="canvas" id="targetChart" width="500" height="500"></canvas>
+            <label for="targetChart" class="feature" id="lbl_active">積極<br />Energetic</label>
+            <label for="targetChart" class="feature" id="lbl_calm">冷靜<br />Composed</label>
+            <label for="targetChart" class="feature" id="lbl_passive">消極<br />Passive</label>
+            <label for="targetChart" class="feature" id="lbl_anxiety">躁進<br />Impulsive</label>
+            <label for="targetChart" class="axis" id="y_Stable">穩定 &nbsp; Stable</label>
+            <label for="targetChart" class="axis" id="x_Peace">平和<br />Serene</label>
+            <label for="targetChart" class="axis" id="y_Unstable">波動 &nbsp; Reactive</label>
+            <label for="targetChart" class="axis" id="x_Energy">活力<br />Vitality</label>
             <!-- <label for="targetChart" class = "star" ><i class="bi bi-star-fill" visable="false"></i></label> -->
-            <label for="targetChart" class="feature" id="lbl_active"><p>積極</p></label>
-            <label for="targetChart" class="feature" id="lbl_calm">冷靜</label>
-            <label for="targetChart" class="feature" id="lbl_passive">消極</label>
-            <label for="targetChart" class="feature" id="lbl_anxiety">躁進</label>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
