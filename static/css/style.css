@@ -202,6 +202,14 @@ h2 span{
   /* stroke: var(--green); */
   transition: stroke-dashoffset 1s ease-out;
 }
+@media (max-width: 576px) {
+    .graph {
+        width: 90%;
+    }
+    .knob_data{
+        font-size: 1.97207em;
+    }
+}
 /* ------------------------------section-dashboard------------------------------ */
 /* ------------------------------section-nervetarget------------------------------ */
 #nervetarget{
@@ -270,8 +278,8 @@ h2 span{
     transform: translate(0%, -50%);
 }
 #y_Unstable{
-    bottom: 0%;
-    left: 50%;
+    bottom: 1%;
+    left: 51%;
     transform: translate(-36%, 50%);
 }
 #x_Energy{
