@@ -16,153 +16,163 @@
 //------------------------------------------------------------------------------------------------------身理健康指標雷達圖
 //參考https://www.chartjs.org/docs/latest/axes/radial/
     window.addEventListener('DOMContentLoaded', () => {
-    const radarData = {
-        labels: [
-            ["活力指標", "Vitality Index"],
-            ["身心平衡指標", "Mind-Body","Balance Index"],
-            ["血壓指標", "Blood Pressure Index"],
-            ["血管彈性指標", "Vascular Elasticity Index"],
-            ["壓力指標", "Stress Index"]
-        ],
-        datasets: [{
-        label: "綜合表現 / Overall (Max 100)",
-        data: [
-            20,
-            35,
-            50,
-            65,
-            80
-        ],
-        backgroundColor: "rgba(54, 162, 235, 0.2)",
-        borderColor: "rgba(54, 162, 235, 1)",
-        pointBackgroundColor: "rgba(54, 162, 235, 1)"
-        }]
-    };
+        const radarData = {
+            labels: [
+                ["活力指標", "Vitality Index"],
+                ["身心平衡指標", "Mind-Body","Balance Index"],
+                ["血壓指標", "Blood Pressure Index"],
+                ["血管彈性指標", "Vascular Elasticity Index"],
+                ["壓力指標", "Stress Index"]
+            ],
+            datasets: [{
+            label: "綜合表現 / Overall (Max 100)",
+            data: [
+                20,
+                35,
+                50,
+                65,
+                80
+            ],
+            backgroundColor: "rgba(54, 162, 235, 0.2)",
+            borderColor: "rgba(54, 162, 235, 1)",
+            pointBackgroundColor: "rgba(54, 162, 235, 1)"
+            }]
+        };
     
-    // ⬇️ 1. 產生 Chart.js 雷達圖
+        // ⬇️ 1. 產生 Chart.js 雷達圖
 
-    // 根據視窗寬度動態決定字體大小
-    let labelFontSize = 22;
-    if (window.innerWidth < 385) {        // Bootstrap 的手機斷點
-    labelFontSize = 10;
-    } else if (window.innerWidth < 576) { // 平板
-    labelFontSize = 12;
-    }else if (window.innerWidth < 768) { // 平板
-    labelFontSize = 15;
-    }else if (window.innerWidth < 926) { // 中螢幕
-    labelFontSize = 18;
-    }
+        // 根據視窗寬度動態決定字體大小
+        let labelFontSize = 22;
+        if (window.innerWidth < 385) {        // Bootstrap 的手機斷點
+        labelFontSize = 10;
+        } else if (window.innerWidth < 576) { // 平板
+        labelFontSize = 12;
+        }else if (window.innerWidth < 768) { // 平板
+        labelFontSize = 15;
+        }else if (window.innerWidth < 926) { // 中螢幕
+        labelFontSize = 18;
+        }
     
-    //上雷達圖背景色-->plugins
-    const radarBackgroundPlugin = {
-    id: 'radarBackgroundPlugin',
-    beforeDraw(chart) {
-        const { ctx, scales } = chart;
-        const scale = scales.r;
+        //上雷達圖背景色-->plugins
+        const radarBackgroundPlugin = {
+            id: 'radarBackgroundPlugin',
+            beforeDraw(chart) {
+                const { ctx, scales } = chart;
+                const scale = scales.r;
 
-        const centerX = scale.xCenter;
-        const centerY = scale.yCenter;
-        const radius = scale.drawingArea;
+                const centerX = scale.xCenter;
+                const centerY = scale.yCenter;
+                const radius = scale.drawingArea;
 
-        const steps = [20, 40, 100];
-        const colors = ['#febbad', '#fedcad', '#c7ebd5'];
+                const steps = [20, 40, 100];
+                const colors = ['#febbad', '#fedcad', '#c7ebd5'];
 
-        const pointCount = chart.data.labels.length;
-        const angleStep = (Math.PI * 2) / pointCount;
+                const pointCount = chart.data.labels.length;
+                const angleStep = (Math.PI * 2) / pointCount;
 
-        ctx.save();
+                ctx.save();
 
-        steps.forEach((step, i) => {
-        const innerR = i === 0 ? 0 : (steps[i - 1] / 100) * radius;
-        const outerR = (step / 100) * radius;
+                steps.forEach((step, i) => {
+                const innerR = i === 0 ? 0 : (steps[i - 1] / 100) * radius;
+                const outerR = (step / 100) * radius;
 
-        // 建立單獨的路徑來定義該區段
-        ctx.beginPath();
+                // 建立單獨的路徑來定義該區段
+                ctx.beginPath();
 
-        // 外五邊形（順時針）
-        for (let j = 0; j < pointCount; j++) {
-            const angle = j * angleStep - Math.PI / 2;
-            const x = centerX + outerR * Math.cos(angle);
-            const y = centerY + outerR * Math.sin(angle);
-            if (j === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-        }
-        ctx.closePath();
+                // 外五邊形（順時針）
+                for (let j = 0; j < pointCount; j++) {
+                    const angle = j * angleStep - Math.PI / 2;
+                    const x = centerX + outerR * Math.cos(angle);
+                    const y = centerY + outerR * Math.sin(angle);
+                    if (j === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                }
+                ctx.closePath();
 
-        // 內五邊形（逆時針）
-        ctx.moveTo(
-            centerX + innerR * Math.cos(-Math.PI / 2),
-            centerY + innerR * Math.sin(-Math.PI / 2)
-        );
-        for (let j = 0; j < pointCount; j++) {
-            const angle = j * angleStep - Math.PI / 2;
-            const x = centerX + innerR * Math.cos(angle);
-            const y = centerY + innerR * Math.sin(angle);
-            ctx.lineTo(x, y);
-        }
-        ctx.closePath();
+                // 內五邊形（逆時針）
+                ctx.moveTo(
+                    centerX + innerR * Math.cos(-Math.PI / 2),
+                    centerY + innerR * Math.sin(-Math.PI / 2)
+                );
+                for (let j = 0; j < pointCount; j++) {
+                    const angle = j * angleStep - Math.PI / 2;
+                    const x = centerX + innerR * Math.cos(angle);
+                    const y = centerY + innerR * Math.sin(angle);
+                    ctx.lineTo(x, y);
+                }
+                ctx.closePath();
 
-        ctx.fillStyle = colors[i];
-        ctx.fill("evenodd"); // ⬅️ 用 evenodd 模式區分內外形狀
-        });
+                ctx.fillStyle = colors[i];
+                ctx.fill("evenodd"); // ⬅️ 用 evenodd 模式區分內外形狀
+                });
 
-        ctx.restore();
-    }
-    };
+                ctx.restore();
+            }
+        };
 
-    console.log('radarBackgroundPlugin:', radarBackgroundPlugin);
+        console.log('radarBackgroundPlugin:', radarBackgroundPlugin);
 
-    //設定雷達間距-->參考https://www.chartjs.org/docs/latest/axes/radial/
-    const config = {
-        type: 'radar',
-        data: radarData,
-        options: {
-        responsive: true,
-        scales: {
-            r: {
-            min: 0,
-            max: 100,
-            ticks: {
-                stepSize: 20,
-                backdropColor: "transparent"
+        //設定雷達間距-->參考https://www.chartjs.org/docs/latest/axes/radial/
+        const config = {
+            type: 'radar',
+            data: radarData,
+            options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        font: {
+                            size: 18
+                        }
+                    }
+                }
             },
-            pointLabels: {
-                font: {
-                size: labelFontSize
+            scales: {
+                r: {
+                min: 0,
+                max: 100,
+                ticks: {
+                    stepSize: 20,
+                    backdropColor: "transparent"
+                },
+                pointLabels: {
+                    font: {
+                    size: labelFontSize
+                    }
+                }
                 }
             }
-            }
-        }
-        },
-        plugins: [radarBackgroundPlugin]
-    };
+            },
+            plugins: [radarBackgroundPlugin]
+        };
     
-    const ctx = document.getElementById('radarChart');
-    new Chart(ctx, config);
+        const ctx = document.getElementById('radarChart');
+        new Chart(ctx, config);
 
-    // ------------------------------------------------------------------------------------------------------更新每個卡片的數值與 SVG 繪製
-    const cards = document.querySelectorAll('.panel-index');
-    const values = radarData.datasets[0].data;
+        // ------------------------------------------------------------------------------------------------------更新每個卡片的數值與 SVG 繪製
+        const cards = document.querySelectorAll('.panel-index');
+        const values = radarData.datasets[0].data;
 
-    cards.forEach((card, index) => {
-            const percent = values[index];
-            const knob = card.querySelector('.knob_data');
-            const circle = card.querySelector('.progress-ring');
+        cards.forEach((card, index) => {
+                const percent = values[index];
+                const knob = card.querySelector('.knob_data');
+                const circle = card.querySelector('.progress-ring');
 
-            // 更新顯示數字
-            //knob.innerHTML = `${percent}<span class="txt_smaller">%</span>`;
+                // 更新顯示數字，若有連結後端可註解這行
+                //knob.innerHTML = `${percent}<span class="txt_smaller">%</span>`;
 
-            // 畫 SVG 環形進度
-            if (circle) {
-            const totalLength = circle.getTotalLength();
-            circle.style.strokeDasharray = totalLength;
-            circle.style.strokeDashoffset = totalLength * (1 - percent / 200);
+                // 畫 SVG 環形進度
+                if (circle) {
+                const totalLength = circle.getTotalLength();
+                circle.style.strokeDasharray = totalLength;
+                circle.style.strokeDashoffset = totalLength * (1 - percent / 200);
 
-            // ✅ 讓圓從「下方」開始畫
-            const cx = circle.getAttribute("cx");
-            const cy = circle.getAttribute("cy");
-            circle.setAttribute("transform", `rotate(180 ${cx} ${cy})`);
-            }
+                // ✅ 讓圓從「下方」開始畫
+                const cx = circle.getAttribute("cx");
+                const cy = circle.getAttribute("cy");
+                circle.setAttribute("transform", `rotate(180 ${cx} ${cy})`);
+                }
         });
     });
 
@@ -194,31 +204,11 @@
     ctx.strokeStyle = "black";
     ctx.stroke();
 
-    // 加上文字：左「平和」、右「活力」
-    // ctx.font = "16px Arial";
-    // ctx.fillStyle = "black";
-    // ctx.textAlign = "left";
-    // ctx.textBaseline = "top";
-    // ctx.fillText("平和", 5, centerY - 20); // 左邊偏內一點
-
-    // ctx.textAlign = "right";
-    // ctx.fillText("活力", canvas.width - 5, centerY - 20); // 右邊偏內一點
-
     // 畫 Y 軸
     ctx.beginPath();
     ctx.moveTo(centerX, 0);
     ctx.lineTo(centerX, canvas.height);
     ctx.stroke();
-
-    // // 加上文字：上「穩定」、下「波動」
-    // ctx.font = "16px Arial";
-    // ctx.fillStyle = "black";
-    // ctx.textAlign = "left";
-    // ctx.textBaseline = "top";
-    // ctx.fillText("波動", centerY + 5, centerY + canvas.width/2 - 20); // 上邊偏右一點
-
-    // ctx.textAlign = "left";
-    // ctx.fillText("穩定", centerY + 5, 0 + 5); // 下邊偏右一點
 
     //------------------------------------------------------------------------------------------------------星星座標函式
     
