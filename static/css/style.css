@@ -355,7 +355,7 @@ h2 span{
 /* Start--這是DEMO用的CSS */
 .stresslow{
     display: block;
-    background: var(--teal);
+    background: #28a157;
     padding: 3px;
 }
 @media (max-width:589px) {
