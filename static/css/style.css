@@ -15,9 +15,7 @@
   --gray:       #6c757d;
   --gray-dark:  #343a40;
 }
-* {
-    box-sizing: border-box;
-}
+*, *::before, *::after {box-sizing: border-box;}
 
 
 /* End--這是DEMO用的CSS */
@@ -132,15 +130,14 @@ h2 span{
     margin-left: 8%;
     margin-bottom: 30px;
 }
-#radar-container {
+.radar-container {
       max-width: 900px;
-      min-width: 200px;
       width: 80%;
       margin: auto;
       display: flex;
       justify-content: center;
     }
-#radarChart {
+.radarChart {
     width: 100% !important;
     height: auto !important;
     }
@@ -152,9 +149,6 @@ h2 span{
     text-align: center;
     padding-top: 10px;
     transition: transform 0.3s ease;
-}
-.carsList{
-    gap: 8px;
 }
 .card:hover{
     transform: translateY(-3px);

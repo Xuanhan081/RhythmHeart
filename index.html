@@ -83,26 +83,26 @@
     </section>
         <div class="title">
             <hr>
-            <h2>身心綜合表現</h2>
-            <h5>Body and Mind Overall Performance</h5>
+            <h2>身心靈平衡表現</h2>
+            <h5>Mind-Body-Spirit Balance Performance</h5>
         </div>
     <section id="radar">
-        <div id="radar-container">
-            <canvas id="radarChart"></canvas>
+        <div id="radar-container" class="radar-container">
+            <canvas id="radarChart" class="radarChart"></canvas>
         </div>
     </section>
     <section id="dashboard">
         <div class="container container-md">
             <div class="g-4 row">
-                <div class="col-lg-4 col-md-6" id="index-bp">
+                <div class="col-12 col-lg-4 col-md-6" id="index-bp">
                     <div class="card panel-index rounded-4">
-                    <label for="" class="card-head">血壓指標<br>BP-Index</label>
+                    <label for="" class="card-head">活力指標<br>Vitality Index</label>
                         <div class="card-body">
                             <div class="graph">
                                 <div class="knob_data">20
                                     <span class="txt_smaller">%</span>
                                 </div>
-                                <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="graph_media" max-width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
                                     <!-- 漸層定義 -->
                                     <defs>
                                         <linearGradient id="grad-stroke-1"
@@ -113,7 +113,7 @@
                                         </linearGradient>
                                     </defs>
                                 <!-- 背景圓 -->
-                                <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99"   stroke-dashoffset="376.99"/>
+                                <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99" stroke-dashoffset="376.99" stroke-linecap="round"/>
                                 <!-- 進度圓 -->
                                 <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-1)"  stroke-width="20" 
                                         fill="none" stroke-linecap="round"
@@ -125,15 +125,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" id="index-bve">
+                <div class="col-6 col-lg-4 col-md-6" id="index-bve">
                     <div class="card panel-index rounded-4">
-                    <label for="" class="card-head">神經活動<br>Neural-Index</label>
+                    <label for="" class="card-head">身心平衡指標<br>Mind-Body Balance Index</label>
                         <div class="card-body">
                             <div class="graph">
                                 <div class="knob_data">35
                                     <span class="txt_smaller">%</span>
                                 </div>
-                                <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="graph_media" max-width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
                                     <!-- 漸層定義 -->
                                     <defs>
                                         <linearGradient id="grad-stroke-2"
@@ -143,12 +143,12 @@
                                         <stop offset="40%" stop-color="#fcb553" />
                                         </linearGradient>
                                     </defs>
-                                <!-- 背景圓 -->
-                                <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99"   stroke-dashoffset="376.99"/>
-                                <!-- 進度圓 -->
-                                <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-2)" stroke-width="20" 
-                                        fill="none" stroke-linecap="round"
-                                        stroke-dasharray="753.98" stroke-dashoffset="753.98" />
+                                    <!-- 背景圓 -->
+                                    <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99" stroke-dashoffset="376.99" stroke-linecap="round"/>
+                                    <!-- 進度圓 -->
+                                    <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-2)" stroke-width="20" 
+                                            fill="none" stroke-linecap="round"
+                                            stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                                 </svg>
                                 <label for="" class="card-label" style="background: #fedcad;">Good</label>
                                 <!-- <asp:Label id="Label_Nerve" runat="server" CssClass="card-label"/> -->
@@ -156,15 +156,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" id="index-p">
+                <div class="col-6 col-lg-4 col-md-6" id="index-p">
                     <div class="card panel-index rounded-4">
-                        <label for="" class="card-head">身心平衡<br>Balance-Index</label>
+                        <label for="" class="card-head">血壓指標<br>Blood Pressure Index</label>
                         <div class="card-body">
                             <div class="graph">
                                 <div class="knob_data">50
                                     <span class="txt_smaller">%</span>
                                 </div>
-                                <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="graph_media" max-width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
                                     <!-- 漸層定義 -->
                                     <defs>
                                         <linearGradient id="grad-stroke-3"
@@ -176,7 +176,7 @@
                                         </linearGradient>
                                     </defs>
                                 <!-- 背景圓 -->
-                                <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99"   stroke-dashoffset="376.99"/>
+                                <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99" stroke-dashoffset="376.99" stroke-linecap="round"/>
                                 <!-- 進度圓 -->
                                 <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-3)" stroke-width="20" 
                                         fill="none" stroke-linecap="round"
@@ -188,17 +188,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" id="index-bmb">
+                <div class="col-6 col-lg-4 col-md-6" id="index-bmb">
                     <div class="card panel-index rounded-4">
-                    <label for="" class="card-head">壓力指標<br>Stress-Index</label>
+                    <label for="" class="card-head">血管彈性指標<br>Vascular Elasticity Index</label>
                         <div class="card-body">
                             <div class="graph">
                                 <div class="knob_data">65
                                     <span class="txt_smaller">%</span>
                                 </div>
-                                <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="graph_media" max-width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round">
                                 <!-- 背景圓 -->
-                                <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99"   stroke-dashoffset="376.99"/>
+                                <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99" stroke-dashoffset="376.99" stroke-linecap="round"/>
                                 <!-- 進度圓 -->
                                 <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-3)" stroke-width="20" 
                                         fill="none" stroke-linecap="round"
@@ -210,17 +210,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" id="index-na">
+                <div class="col-6 col-lg-4 col-md-6" id="index-na">
                     <div class="card panel-index rounded-4">
-                    <label for="" class="card-head">血管彈性<br>Vascular-Index</label>
+                    <label for="" class="card-head">壓力指標<br>Stress Index</label>
                         <div class="card-body">
                             <div class="graph">
                                 <div class="knob_data">80
                                     <span class="txt_smaller">%</span>
                                 </div>
-                                <svg class="graph_media" width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="graph_media" max-width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
                                 <!-- 背景圓 -->
-                                <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99"   stroke-dashoffset="376.99"/>
+                                <circle cx="133" cy="133" r="120" stroke="#eee" stroke-width="16" fill="none" stroke-dasharray="376.99 376.99" stroke-dashoffset="376.99" stroke-linecap="round"/>
                                 <!-- 進度圓 -->
                                 <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-3)" stroke-width="20" 
                                         fill="none" stroke-linecap="round"
@@ -232,37 +232,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" id="index-bp">
-                    <div class="card panel-index rounded-4">
-                    <label for="" class="card-head">血壓指標<br>BP-Index</label>
-                        <div class="card-body">
-                            <div class="graph">
-                                <div class="knob_data">
-                                    <span class="txt_smaller"></span>
-                                </div>
-                                <img class="bi" src="image/point2.svg" width="75%" height="75%" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
         <div class="title">
             <hr>
-            <h2>神經活動指標</h2>
+            <h2>身心靈平衡分析</h2>
             <h5>Neural Activity Index</h5>
         </div>
     <section id="nervetarget">
         <div class="target-container">
             <canvas class="canvas" id="targetChart" width="500" height="500"></canvas>
             <label for="targetChart" class="feature" id="lbl_active">積極<br />Energetic</label>
-            <label for="targetChart" class="feature" id="lbl_calm">冷靜<br />Composed</label>
+            <label for="targetChart" class="feature" id="lbl_calm">平靜<br />Composed</label>
             <label for="targetChart" class="feature" id="lbl_passive">消極<br />Passive</label>
             <label for="targetChart" class="feature" id="lbl_anxiety">躁進<br />Impulsive</label>
             <label for="targetChart" class="axis" id="y_Stable">穩定 &nbsp; Stable</label>
             <label for="targetChart" class="axis" id="x_Peace">平和<br />Serene</label>
-            <label for="targetChart" class="axis" id="y_Unstable">波動 &nbsp; Reactive</label>
+            <label for="targetChart" class="axis" id="y_Unstable">浮躁 &nbsp; Irritability</label>
             <label for="targetChart" class="axis" id="x_Energy">活力<br />Vitality</label>
             <!-- <label for="targetChart" class = "star" ><i class="bi bi-star-fill" visable="false"></i></label> -->
         </div>
