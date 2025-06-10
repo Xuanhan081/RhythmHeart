@@ -207,6 +207,9 @@ h2 span{
     vertical-align: middle;
     letter-spacing: 1px;
 }
+.text-orange {
+    color: #fb8c00;
+}
 .progress-ring{
   /* stroke: var(--green); */
   transition: stroke-dashoffset 1s ease-out;
