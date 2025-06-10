@@ -32,7 +32,7 @@ h4 span{
     line-height: 1.5;
 }
 h2 span{
-    font-size: 16px;
+    font-size: 28px;
 }
 .container-fluid{
     padding: 10px;
@@ -50,6 +50,9 @@ h2 span{
 .text-logo{
     width: 45%;
 }
+.section{
+    padding-bottom: 40px;
+}
 /* @media (max-width:926px) {
     h1{
         font-size: 32px;
@@ -65,7 +68,7 @@ h2 span{
         font-size: 24px;
     }
     h2 span{
-        font-size: 14px;
+        font-size: 22px;
     }
     h4{
         font-size: 18px;
@@ -243,7 +246,7 @@ h2 span{
     left: 0%;
     transform: translate(-50%, 0%);
     font-size: 28px;
-    color: darkred;
+    color: #0000ff;
     }
 .feature{
     font-size: 18px;

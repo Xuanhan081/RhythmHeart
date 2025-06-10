@@ -22,7 +22,7 @@
                 ["身心平衡指標", "Mind-Body","Balance Index"],
                 ["血壓指標", "Blood Pressure Index"],
                 ["血管彈性指標", "Vascular Elasticity Index"],
-                ["壓力指標", "Stress Index"]
+                ["放鬆指標", "Relaxation Index"]
             ],
             datasets: [{
             label: "綜合表現 / Overall (Max 100)",
