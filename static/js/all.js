@@ -1,17 +1,8 @@
-
-    // fetch('static/js/chart.json')
-    // .then(res => res.json())
-    // .then(data => {
-    //     const radarData = {
-    //     labels: data.labels,
-    //     datasets: [{
-    //         label: "使用者評分",
-    //         data: data.scores,
-    //         backgroundColor: "rgba(54, 162, 235, 0.2)",
-    //         borderColor: "rgba(54, 162, 235, 1)",
-    //         pointBackgroundColor: "rgba(54, 162, 235, 1)"
-    //     }]
-    //     };
+AOS.init({
+        offset: 100, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 1800 // values from 0 to 3000, with step 50ms
+      })
 
 //------------------------------------------------------------------------------------------------------身理健康指標雷達圖
 //參考https://www.chartjs.org/docs/latest/axes/radial/
