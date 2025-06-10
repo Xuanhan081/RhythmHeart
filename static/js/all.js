@@ -151,29 +151,52 @@
         new Chart(ctx, config);
 
         // ------------------------------------------------------------------------------------------------------更新每個卡片的數值與 SVG 繪製
-        const cards = document.querySelectorAll('.panel-index');
-        const values = radarData.datasets[0].data;
+        function animateCardProgress(card, percent) {
+            const knob = card.querySelector('.knob_data');
+            const circle = card.querySelector('.progress-ring');
 
-        cards.forEach((card, index) => {
-                const percent = values[index];
-                const knob = card.querySelector('.knob_data');
-                const circle = card.querySelector('.progress-ring');
+            // 更新數字（可視需要加入 %）
+            // knob.innerHTML = `${percent}<span class="txt_smaller">%</span>`;
 
-                // 更新顯示數字，若有連結後端可註解這行
-                //knob.innerHTML = `${percent}<span class="txt_smaller">%</span>`;
-
-                // 畫 SVG 環形進度
-                if (circle) {
+            if (circle) {
                 const totalLength = circle.getTotalLength();
                 circle.style.strokeDasharray = totalLength;
-                circle.style.strokeDashoffset = totalLength * (1 - percent / 200);
+                circle.style.strokeDashoffset = totalLength; // 初始化為 100%
 
-                // ✅ 讓圓從「下方」開始畫
+                // 延遲觸發動畫
+                requestAnimationFrame(() => {
+                    circle.style.transition = 'stroke-dashoffset 1s ease-out';
+                    circle.style.strokeDashoffset = totalLength * (1 - percent / 200);
+                });
+
+                // 從底部畫起
                 const cx = circle.getAttribute("cx");
                 const cy = circle.getAttribute("cy");
                 circle.setAttribute("transform", `rotate(180 ${cx} ${cy})`);
+            }
+        };
+        const cards = document.querySelectorAll('.panel-index');
+        const values = radarData.datasets[0].data;
+        const observed = new Set(); // 防止重複動畫
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const card = entry.target;
+                    const index = Array.from(cards).indexOf(card);
+                    if (!observed.has(card) && index >= 0) {
+                        animateCardProgress(card, values[index]);
+                        observed.add(card);
+                    }
                 }
+            });
+        }, {
+            root: null,
+            threshold: 0.6 // 元素 60% 進入畫面才觸發
         });
+
+        cards.forEach(card => observer.observe(card));
+
     });
 
 
