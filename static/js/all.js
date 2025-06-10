@@ -27,10 +27,10 @@
             datasets: [{
             label: "綜合表現 / Overall (Max 100)",
             data: [
-                20,
+                85,
                 35,
                 50,
-                65,
+                19,
                 80
             ],
             backgroundColor: "rgba(54, 162, 235, 0.2)",

@@ -99,28 +99,42 @@
                     <label for="" class="card-head"><b>活力指標</b><br><small>Vitality Index</small></label>
                         <div class="card-body">
                             <div class="graph">
-                                <div class="knob_data text-danger fs-1 fw-bold">20
+                                <div class="knob_data text-success fs-1 fw-bold">85
                                     <!-- <span class="txt_smaller">%</span> -->
                                 </div>
                                 <svg class="graph_media" style="width: 100%;" max-width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- 漸層定義 -->
-                                    <defs>
-                                        <linearGradient id="grad-stroke-1"
-                                                        x1="100%" y1="0%" x2="0%" y2="0%"
-                                                        gradientUnits="userSpaceOnUse">
-                                        <stop offset="0%" stop-color="#fccec5" />
-                                        <stop offset="20%" stop-color="#fc2d02" />
-                                        </linearGradient>
-                                    </defs>
+                                    <!-- 漸層定義 START-->
+                                            <defs>
+                                                <linearGradient id="grad-stroke-red"
+                                                                x1="100%" y1="0%" x2="0%" y2="0%"
+                                                                gradientUnits="userSpaceOnUse">
+                                                <stop offset="0%" stop-color="#fccec5" />
+                                                <stop offset="20%" stop-color="#fc2d02" />
+                                                </linearGradient>
+                                                <linearGradient id="grad-stroke-yellow"
+                                                                x1="100%" y1="0%" x2="0%" y2="0%"
+                                                                gradientUnits="userSpaceOnUse">
+                                                <stop offset="0%" stop-color="#fce4c3" />
+                                                <stop offset="40%" stop-color="#fcb553" />
+                                                </linearGradient>
+                                                <linearGradient id="grad-stroke-green"
+                                                                x1="100%" y1="0%" x2="0%" y2="0%"
+                                                                gradientUnits="userSpaceOnUse">
+                                                <stop offset="0%" stop-color="#b7ebca" />
+                                                <stop offset="50%" stop-color="#54c580" />
+                                                <stop offset="100%" stop-color="#28a157" />
+                                                </linearGradient>
+                                            </defs>
+                                    <!-- 漸層定義 END-->
                                 <!-- 背景圓 -->
-                                <circle cx="133" cy="133" r="120" stroke="#ffe6e1" stroke-width="25" fill="none" stroke-dasharray="376.99 376.99" stroke-dashoffset="376.99" stroke-linecap="round"/>
+                                <circle cx="133" cy="133" r="120" stroke="#def6e7" stroke-width="25" fill="none" stroke-dasharray="376.99 376.99" stroke-dashoffset="376.99" stroke-linecap="round"/>
                                 <!-- 進度圓 -->
-                                <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-1)"  stroke-width="26" 
+                                <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-green)"  stroke-width="26" 
                                         fill="none" stroke-linecap="round"
                                         stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                                 </svg>
                             </div>
-                            <label for="" class="card-label text-light fw-bold" style="background: #ee7c64;">Poor</label>
+                            <label for="" class="card-label text-light fw-bold" style="background: #28a157;">Excellent</label>
                             <!-- <asp:Label id="Label_BP" runat="server" CssClass="card-label"/> -->
                         </div>
                     </div>
@@ -134,19 +148,10 @@
                                     <!-- <span class="txt_smaller">%</span> -->
                                 </div>
                                 <svg class="graph_media" style="width: 100%;" max-width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- 漸層定義 -->
-                                    <defs>
-                                        <linearGradient id="grad-stroke-2"
-                                                        x1="100%" y1="0%" x2="0%" y2="0%"
-                                                        gradientUnits="userSpaceOnUse">
-                                        <stop offset="0%" stop-color="#fce4c3" />
-                                        <stop offset="40%" stop-color="#fcb553" />
-                                        </linearGradient>
-                                    </defs>
                                     <!-- 背景圓 -->
                                     <circle cx="133" cy="133" r="120" stroke="#f9e9d4" stroke-width="25" fill="none" stroke-dasharray="376.99 376.99" stroke-dashoffset="376.99" stroke-linecap="round"/>
                                     <!-- 進度圓 -->
-                                    <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-2)" stroke-width="26" 
+                                    <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-yellow)" stroke-width="26" 
                                             fill="none" stroke-linecap="round"
                                             stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                                 </svg>
@@ -165,20 +170,10 @@
                                     <!-- <span class="txt_smaller">%</span> -->
                                 </div>
                                 <svg class="graph_media" style="width: 100%;" max-width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- 漸層定義 -->
-                                    <defs>
-                                        <linearGradient id="grad-stroke-3"
-                                                        x1="100%" y1="0%" x2="0%" y2="0%"
-                                                        gradientUnits="userSpaceOnUse">
-                                        <stop offset="0%" stop-color="#b7ebca" />
-                                        <stop offset="50%" stop-color="#54c580" />
-                                        <stop offset="100%" stop-color="#28a157" />
-                                        </linearGradient>
-                                    </defs>
                                 <!-- 背景圓 -->
                                 <circle cx="133" cy="133" r="120" stroke="#def6e7" stroke-width="25" fill="none" stroke-dasharray="376.99 376.99" stroke-dashoffset="376.99" stroke-linecap="round"/>
                                 <!-- 進度圓 -->
-                                <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-3)" stroke-width="26" 
+                                <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-green)" stroke-width="26" 
                                         fill="none" stroke-linecap="round"
                                         stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                                 </svg>
@@ -193,19 +188,19 @@
                     <label for="" class="card-head"><b>血管彈性指標</b><br><small>Vascular Elasticity <br class="d-sm-none">Index</small></label>
                         <div class="card-body">
                             <div class="graph">
-                                <div class="knob_data text-success fs-1 fw-bold">65
+                                <div class="knob_data text-danger fs-1 fw-bold">19
                                     <!-- <span class="txt_smaller">%</span> -->
                                 </div>
                                 <svg class="graph_media" style="width: 100%;" max-width="192" height="266" viewBox="0 0 266 266" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round">
                                 <!-- 背景圓 -->
-                                <circle cx="133" cy="133" r="120" stroke="#def6e7" stroke-width="25" fill="none" stroke-dasharray="376.99 376.99" stroke-dashoffset="376.99" stroke-linecap="round"/>
+                                <circle cx="133" cy="133" r="120" stroke="#ffe6e1" stroke-width="25" fill="none" stroke-dasharray="376.99 376.99" stroke-dashoffset="376.99" stroke-linecap="round"/>
                                 <!-- 進度圓 -->
-                                <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-3)" stroke-width="26" 
+                                <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-red)" stroke-width="26" 
                                         fill="none" stroke-linecap="round"
                                         stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                                 </svg>
                             </div>
-                            <label for="" class="card-label text-light fw-bold" style="background: #28a157;">Excellent</label>
+                            <label for="" class="card-label text-light fw-bold" style="background: #ee7c64;">Poor</label>
                             <!-- <asp:Label id="Label_Stress" runat="server" CssClass="card-label"/> -->
                         </div>
                     </div>
@@ -222,7 +217,7 @@
                                 <!-- 背景圓 -->
                                 <circle cx="133" cy="133" r="120" stroke="#def6e7" stroke-width="25" fill="none" stroke-dasharray="376.99 376.99" stroke-dashoffset="376.99" stroke-linecap="round"/>
                                 <!-- 進度圓 -->
-                                <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-3)" stroke-width="26" 
+                                <circle class="progress-ring" cx="133" cy="133" r="120" stroke="url(#grad-stroke-green)" stroke-width="26" 
                                         fill="none" stroke-linecap="round"
                                         stroke-dasharray="753.98" stroke-dashoffset="753.98" />
                                 </svg>
