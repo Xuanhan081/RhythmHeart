@@ -156,7 +156,7 @@
             const circle = card.querySelector('.progress-ring');
 
             // 更新數字（可視需要加入 %）
-            // knob.innerHTML = `${percent}<span class="txt_smaller">%</span>`;
+            knob.innerHTML = `${percent}<span class="fs-6">%</span>`;
 
             if (circle) {
                 const totalLength = circle.getTotalLength();
