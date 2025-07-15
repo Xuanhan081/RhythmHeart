@@ -1,7 +1,7 @@
 AOS.init({
         offset: 100, // offset (in px) from the original trigger point
         delay: 0, // values from 0 to 3000, with step 50ms
-        duration: 1800 // values from 0 to 3000, with step 50ms
+        duration: 1100 // values from 0 to 3000, with step 50ms
       })
 
 //------------------------------------------------------------------------------------------------------身理健康指標雷達圖
@@ -218,11 +218,32 @@ AOS.init({
     ctx.strokeStyle = "black";
     ctx.stroke();
 
+     // 加上文字：左「平和」、右「活力」
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "black";
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    ctx.fillText("平和 Serene", 5, centerY - 20); // 左邊偏內一點
+
+    ctx.textAlign = "right";
+    ctx.fillText("活力 Vitality", canvas.width - 5, centerY - 20); // 右邊偏內一點
+
     // 畫 Y 軸
     ctx.beginPath();
     ctx.moveTo(centerX, 0);
     ctx.lineTo(centerX, canvas.height);
     ctx.stroke();
+
+    // 加上文字：上「穩定」、下「波動」
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "black";
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    ctx.fillText("穩定 Stable", centerY + 5, centerY + canvas.width/2 - 20); // 上邊偏右一點
+
+    ctx.textAlign = "left";
+    ctx.fillText("浮躁 Fatigue", centerY + 5, 0 + 5); // 下邊偏右一點
+
 
     //------------------------------------------------------------------------------------------------------星星座標函式
     
